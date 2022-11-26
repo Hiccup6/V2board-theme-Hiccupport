@@ -13,7 +13,7 @@ cd /usr/share/nginx/html/v2board/public/
 
 ```shell
 git clone https://github.com/Hiccup6/V2board-theme-Hiccupport.git
-mv v2board-theme-LuFly/* .
+mv v2board-theme-Hiccupport/* .
 ```
 
 修改Nginx运行的index优先级：
