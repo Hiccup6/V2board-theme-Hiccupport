@@ -680,7 +680,21 @@
             if (r!=null) return unescape(r[2]); return null;
         }
 
-        let code = GetQueryString('code');
+        let url = window.location.href  //获取整个url信息
+        let search = window.location.search //获取url问号后的信息
+        function getUrlParams(){
+
+            if(url.indexOf('?')>0){//判断是否有qurey
+                let parmas = url.slice(url.indexOf('?')+6)//截取出query
+
+                return parmas
+            }
+
+        }
+
+
+
+        let code = getUrlParams('code');
         alert(code);
 
 
