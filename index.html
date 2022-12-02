@@ -674,39 +674,16 @@
 
 
 
-      /*  function getQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
             var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return "";
-        }*/
+            if (r!=null) return unescape(r[2]); return "";
+        }
 
-         function urlSearch(argName){
-             if(!argName){return "";}
-             var args = {},query = location.search.substring(1),pairs = query.split("&");
-             for(var i = 0; i < pairs.length; i++) {
-                 var pos = pairs[i].indexOf('=');
-                 if (pos == -1) continue;
-                 var argname = pairs[i].substring(0,pos),value = pairs[i].substring(pos+1);
-                 value = decodeURIComponent(value);
-                 if(argName==argname){
-                     return value;
-                 }
 
-             }
-         }
 
-      function getcode () {
-          var url = location.search;       ////获取接收到的url中含"?"符后的字串
-          var request = new Object();     //实例化一个对象
-          if (url.indexOf("?") != -1) {      //判断“？”后面是否有值
-              var str = url.substr(1)       //去掉括？号
-              strs = str.split("&");
-              for (var i = 0; i < strs.length; i++){
-                  request[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);//将参数和对应的值使用split函数切割出来
-              }
-          }
-        var code = getcode("code");
+          var code = GetQueryString("code");
+
         var a = document.getElementById("register");
         a.href += code
 
