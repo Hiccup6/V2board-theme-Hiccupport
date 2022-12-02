@@ -671,7 +671,7 @@
     <script src="static/js/swiper.min.js"></script>
     <script>
 
-        var code = getQueryString("code");
+
 
 
         function getQueryString(name) {
@@ -680,7 +680,7 @@
             if (r != null) return unescape(r[2]);
             return "";
         }
-
+        var code = getQueryString("code");
         /* function urlSearch(argName){
              if(!argName){return false;}
              var args = {},query = location.search.substring(1),pairs = query.split("&");
