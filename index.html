@@ -680,9 +680,11 @@
             if (r!=null) return unescape(r[2]); return "";
         }
 
+        var code = GetQueryString("code");
 
 
-          var code = GetQueryString("code");
+        alert(code);
+
 
         var a = document.getElementById("register");
         a.href += code
