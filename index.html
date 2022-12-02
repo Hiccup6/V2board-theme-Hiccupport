@@ -695,7 +695,18 @@
 
              }
          }
-      var code = urlSearch(code);
+
+      function getcode () {
+          var url = location.search;       ////获取接收到的url中含"?"符后的字串
+          var request = new Object();     //实例化一个对象
+          if (url.indexOf("?") != -1) {      //判断“？”后面是否有值
+              var str = url.substr(1)       //去掉括？号
+              strs = str.split("&");
+              for (var i = 0; i < strs.length; i++){
+                  request[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);//将参数和对应的值使用split函数切割出来
+              }
+          }
+        var code = getcode("code");
         var a = document.getElementById("register");
         a.href += code
 
