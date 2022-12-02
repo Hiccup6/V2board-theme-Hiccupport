@@ -674,15 +674,15 @@
 
 
 
-        function getQueryString(name) {
+      /*  function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]);
             return "";
-        }
-        var code = getQueryString("code");
-        /* function urlSearch(argName){
-             if(!argName){return false;}
+        }*/
+
+         function urlSearch(argName){
+             if(!argName){return "";}
              var args = {},query = location.search.substring(1),pairs = query.split("&");
              for(var i = 0; i < pairs.length; i++) {
                  var pos = pairs[i].indexOf('=');
@@ -692,9 +692,10 @@
                  if(argName==argname){
                      return value;
                  }
-             }
-         }*/
 
+             }
+         }
+      var code = urlSearch(code);
         var a = document.getElementById("register");
         a.href += code
 
