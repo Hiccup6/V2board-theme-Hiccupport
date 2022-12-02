@@ -45,6 +45,8 @@
                     <li class="nav-item"><a href="/#pricing" class="nav-link">价格</a></li>
 
                 </ul>
+                <a href="index.php#/register?code='+code+'" class="btn btn-sm rounded-pill nav-btn ms-lg-3"><i
+                        class="fas fa-sign-in-alt"></i> 注册</a>
                 <a href="index.php#/login" class="btn btn-sm rounded-pill nav-btn ms-lg-3"><i
                         class="fas fa-sign-in-alt"></i> 登录</a>
             </div>
@@ -668,6 +670,22 @@
     <!--End mc_embed_signup-->
     <script src="static/js/swiper.min.js"></script>
     <script>
+
+        var code = urlSearch(code);
+        function urlSearch(argName){
+            if(!argName){return false;}
+            var args = {},query = location.search.substring(1),pairs = query.split("&");
+            for(var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');
+                if (pos == -1) continue;
+                var argname = pairs[i].substring(0,pos),value = pairs[i].substring(pos+1);
+                value = decodeURIComponent(value);
+                if(argName==argname){
+                    return value;
+                }
+            }
+        }
+
 
         var mySwiper = new Swiper('.swiper-container', {
             direction: 'horizontal',
